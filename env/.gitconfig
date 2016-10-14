@@ -1,0 +1,14 @@
+[alias]
+ci = commit
+co = checkout
+st = status
+br = branch
+;st = status --ignore-space-at-eol
+;;diff = diff --ignore-space-at-eol
+hirano = !echo I am Hirano.
+di = diff --ignore-space-at-eol
+
+[user]
+    email = “daisuke.hirano@photocreate.co.jp
+    name = “Hirano Daisuke
+
