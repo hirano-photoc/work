@@ -3,6 +3,10 @@
 common file
 */
 
+// 解凍するディレクトリ名
+
+$tmp_dir = dirname(__FILE__). DIRECTORY_SEPARATOR .'tmp';
+
 
 $detail_headers[] = array('レコード区分',10);
 $detail_headers[] = array('データ識別',8);
