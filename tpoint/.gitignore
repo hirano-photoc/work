@@ -1,0 +1,11 @@
+
+*.swp
+tmp/*
+#tmp/logs/*
+export-1.sh
+export-test
+export-test.sh
+#       numbers.txt
+#       numbers1.txt
+#       numbers2.txt
+

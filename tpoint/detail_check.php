@@ -29,10 +29,10 @@ foreach ($lines as $line) {
             
         }
     } else {
-        foreach ($fields as $field) {
-            $str = substr($line, $start, $field[1]);
-            echo "$field[0]--$str\n";
-            $start += $field[1];
+        foreach ($detail_fields as $field) {
+            $str = substr($line, $start, $field['name']);
+            echo "{$field['length']}--$str\n";
+            $start += $field['length'];
         }
     }
     $n++;

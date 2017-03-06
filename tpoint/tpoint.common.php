@@ -23,56 +23,235 @@ $detail_headers[] = array('レングス調整',739);
 
 
 //$fields[] = array('使用年月日',8);
-$fields[] = array('使用年',4);
-$fields[] = array('使用月',2);
-$fields[] = array('使用日',2);
-$fields[] = array('使用時刻',6);
-$fields[] = array('営業年月日',8);
-$fields[] = array('業態コード',8);
-$fields[] = array('店舗コード',13);
-$fields[] = array('レジNo.',6);
-$fields[] = array('伝票No.',20);
-$fields[] = array('レコード区分',1);
-$fields[] = array('明細No.',4);
-$fields[] = array('ID区分',1);
-$fields[] = array('返品フラグ',1);
-$fields[] = array('商品コード',64);
-$fields[] = array('ＪＡＮコード',13);
-$fields[] = array('売上点数',8);
-$fields[] = array('売上単価',8);
-$fields[] = array('売上合計',8);
-$fields[] = array('明細値引金額',8);
-$fields[] = array('伝票値引金額',8);
-$fields[] = array('税区分',1);
-$fields[] = array('税率',8);
-$fields[] = array('消費税',8);
-$fields[] = array('支払区分',20);
-$fields[] = array('T会員番号',16);
-$fields[] = array('サイトID',60);
-$fields[] = array('Ｔ会員番号読取区分',1);
-$fields[] = array('個別情報1',20);
-$fields[] = array('個別情報2',20);
-$fields[] = array('個別情報3',20);
-$fields[] = array('個別情報4',20);
-$fields[] = array('個別情報5',20);
-$fields[] = array('個別情報6',20);
-$fields[] = array('個別情報7',20);
-$fields[] = array('個別情報8',20);
-$fields[] = array('個別情報9',20);
-$fields[] = array('個別情報10',20);
-$fields[] = array('個別情報11',30);
-$fields[] = array('個別情報12',30);
-$fields[] = array('個別情報13',30);
-$fields[] = array('個別情報14',30);
-$fields[] = array('個別情報15',30);
-$fields[] = array('個別情報16',30);
-$fields[] = array('個別情報17',30);
-$fields[] = array('個別情報18',30);
-$fields[] = array('個別情報19',30);
-$fields[] = array('個別情報20',30);
+$detail_fields = [
+    [  
+        'name' => '使用年月日',
+        'length' => 8,
+        'require' => true,
+    ],
+    [
+        'name' => '使用時刻',
+        'length' => 6,
+        'require' => true,
+    ],
+    [
+        'name' => '営業年月日',
+        'length' => 8,
+        'require' => true,
+    ],
+    [
+        'name' => '業態コード',
+        'length' => 8,
+        'require' => true,
+    ],
+    [
+        'name' => '店舗コード',
+        'length' => 13,
+        'require' => true,
+    ],
+    [
+        'name' => 'レジNo.',
+        'length' => 6,
+        'require' => true,
+    ],
+    [
+        'name' => '伝票No.',
+        'length' => 20,
+        'require' => true,
+    ],
+    [
+        'name' => 'レコード区分',
+        'length' => 1,
+        'require' => true,
+    ],
+    [
+        'name' => '明細No.',
+        'length' => 4,
+        'require' => true,
+    ],
+    [
+        'name' => 'ID区分',
+        'length' => 1,
+        'require' => true,
+    ],
+    [
+        'name' => '返品フラグ',
+        'length' => 1,
+        'require' => true,
+    ],
+    [
+        'name' => '商品コード',
+        'length' => 64,
+        'require' => false,
+    ],
+    [
+        'name' => 'ＪＡＮコード'
+        ,'length' =>13,
+        'require' => false,
+    ],
+    [
+        'name' => '売上点数',
+        'length' => 8,
+        'require' => true,
+    ],
+    [
+        'name' => '売上単価',
+        'length' => 8,
+        'require' => true,
+    ],
+    [
+        'name' => '売上合計',
+        'length' => 8,
+        'require' => true,
+    ],
+    [
+        'name' => '明細値引金額',
+        'length' => 8,
+        'require' => true,
+    ],
+    [
+        'name' => '伝票値引金額',
+        'length' => 8,
+        'require' => true,
+    ],
+    [
+        'name' => '税区分', 
+        'length' => 1,
+        'require' => true,
+    ],
+    [
+        'name' => '税率',
+        'length' => 8,
+        'require' => true,
+    ],
+    [
+        'name' => '消費税', 
+        'length' => 8,
+        'require' => true,
+    ],
+    [
+        'name' => '支払区分',
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => 'T会員番号',
+        'length' => 16,
+        'require' => false,
+    ],
+    [
+        'name' => 'サイトID', 
+        'length' => 60,
+        'require' => false,
+    ],
+    [
+        'name' => 'Ｔ会員番号読取区分', 
+        'length' => 1,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報1', 
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報2', 
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報3', 
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報4', 
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報5', 
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報6', 
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報7', 
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報8', 
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報9', 
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報10', 
+        'length' => 20,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報11', 
+        'length' => 30,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報12', 
+        'length' => 30,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報13', 
+        'length' => 30,
+        'require' => false,
+    ],
+    [  
+        'name' => '個別情報14', 
+        'length' => 30,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報15', 
+        'length' => 30,
+        'require' => false,
+    ],
+    [  
+        'name' => '個別情報16', 
+        'length' => 30,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報17', 
+        'length' => 30,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報18', 
+        'length' => 30,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報19', 
+        'length' => 30,
+        'require' => false,
+    ],
+    [
+        'name' => '個別情報20', 
+        'length' => 30,
+        'require' => false,
+    ],
+];
 
-
-$product_headers[] = array('レコード区分',10);
+    $product_headers[] = array('レコード区分',10);
 $product_headers[] = array('データ識別',8);
 $product_headers[] = array('アライアンスコード',4);
 $product_headers[] = array('データ作成年月日',8);
