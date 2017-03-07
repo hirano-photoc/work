@@ -37,7 +37,7 @@ $detail_fields = [
     [
         'name' => '営業年月日',
         'length' => 8,
-        'require' => true,
+        'require' => false,
     ],
     [
         'name' => '業態コード',
