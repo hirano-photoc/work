@@ -1,7 +1,8 @@
 work
 
 まずはじめに
-
+sudo yum install -y tmux zsh
+chsh
 ~/.tmux.conf
 ~/.vimrc
 ~/.zshrc
