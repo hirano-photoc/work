@@ -14,3 +14,6 @@ di = diff --ignore-space-at-eol
     email = “daisuke.hirano@photocreate.co.jp
     name = “Hirano Daisuke
 
+[color]
+  ui = auto
+
