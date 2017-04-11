@@ -22,7 +22,7 @@ $file_check = function() use ($src_file) {
         echo "ファイルがある！".basename($src_file)."\n";;
     }
 };
-//$file_check();
+$file_check();
 
 $zip_deflate = function() use ($deflate_dir, $src_file) {
     echo __LINE__.' src_file='.$src_file."\n";
@@ -40,14 +40,14 @@ $zip_deflate = function() use ($deflate_dir, $src_file) {
         echo "解凍失敗";
     }
 };
-//$zip_deflate();
+$zip_deflate();
 
 // 解凍されたファイルの有無
 $data_file = $deflate_dir.DIRECTORY_SEPARATOR.basename($src_file);
 //$data_file = $tmp_dir.DIRECTORY_SEPARATOR.'DD0016302-2015070306.txt';
 //$data_file = $tmp_dir.DIRECTORY_SEPARATOR.'DD001630-20170221.txt';
-$data_file = $deflate_dir.DIRECTORY_SEPARATOR.'DD001630';
-$data_file = '/data/sites/adm/ethna/tmp/tpoint_detail/DD001630.txt';
+//$data_file = $deflate_dir.DIRECTORY_SEPARATOR.'DD001630';
+//$data_file = '/data/sites/adm/ethna/tmp/tpoint_detail/DD001630';
 $is_deflate = function() use ($data_file) {
     if (!file_exists($data_file)) {
         die("調査するファイルが見つからないです。$data_file\n");
@@ -57,7 +57,7 @@ $is_deflate();
 
 $lines = file($data_file);
 
-//echo "[line] $lines\n";
+$header_data = array();
 $n = 0;
 $err_cnt = 0;
 foreach ($lines as $line) {
@@ -68,7 +68,13 @@ foreach ($lines as $line) {
             $len = $header[1];
             $str = substr($line, $start, $len);
             $str = mb_convert_encoding($str, "UTF-8", "Shift-Jis");
-            //echo "$header[0]====$str====[$len]\n";
+
+            if (preg_match("/^\d+$/", $str)) {
+                $header_data[$header[0]] = (int)$str;
+            } else {
+                $header_data[$header[0]] = $str;
+            }
+            echo "$header[0]====$str====[$len]\n";
             $start += $header[1];
             
         }
@@ -115,10 +121,15 @@ foreach ($lines as $line) {
             echo 'n='.$n.' '.$err."\n".$line."\n";
         }
         //echo "n=$n ";
+        if ($n % 1000 == 0) {
+            echo "解析中 n=$n\r";
+        }
     }
 
     $n++;
 }
-echo "err_cnt=".$err_cnt."\n";
-echo "kbn_cnts".print_r($kbn_cnts,1)."\n";
+echo "ヘッダーに記述されたデータ件数 ".$header_data['データ件数'].' 実際の行数='.$n."\n";
+echo "必須項目チェックの件数配列 err_cnt=".$err_cnt."\n";
+echo "kbn_cnts ".print_r($kbn_cnts,1)."\n";
+echo "mes: $mes\n";
 
