@@ -2,7 +2,7 @@
 
 export RBENV_ROOT=/home/vagrant/.rbenv
 export PATH=${RBENV_ROOT}/bin:$PATH
-eval "$(rbenv init - zsh)"
+#eval "$(rbenv init - zsh)"
 alias mailcatcher='mailcatcher --http-ip 192.168.50.26'
 
 alias dstat-full='dstat -Tclmdrn'
