@@ -1,4 +1,5 @@
 
+PROMPT='%F{green}[%d]%f[%W %*] %n$ '
 
 export RBENV_ROOT=/home/vagrant/.rbenv
 export PATH=${RBENV_ROOT}/bin:$PATH
