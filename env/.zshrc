@@ -1,5 +1,8 @@
 
-PROMPT='%F{green}[%d]%f[%W %*] %n$ '
+#PROMPT='%F{green}[%d]%f[%W %*] %n@%m$ '
+PROMPT='%F{green}[%d]%f[%D %*] %n@%m$ '
+
+setopt extended_history
 
 export RBENV_ROOT=/home/vagrant/.rbenv
 export PATH=${RBENV_ROOT}/bin:$PATH
